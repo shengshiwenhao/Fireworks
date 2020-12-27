@@ -1,7 +1,7 @@
 <!DOCTYPE html>  
 <html>  
 <head>  
-<title>2021元旦快乐</title>
+<title>仵文豪祝大家2021年元旦快乐</title>
 <style>
 body{
     margin:0;
@@ -38,7 +38,7 @@ div{
         fws.lineWidth = 0.2; 
         fws.lineCap = "round";       
         var bool = 0, radius = 0,angle = 0;
-        fireworks.onmousemove = function (event) {  
+        fireworks.ontouchmove  = function (event) {  
             if (window.fwsTime) {  
                 if (fwsRandom == 9) { 
                     fwsRandom = Math.random() * 15; 
@@ -103,7 +103,7 @@ div{
             startX = startY = 0; 
             XW += 0.05 
         }  
-        fireworks.onmousemove({ 
+        fireworks.ontouchmove({ 
             pageX: 300, 
             pageY: 290 
         })  
