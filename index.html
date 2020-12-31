@@ -1,7 +1,7 @@
-<!DOCTYPE html>  
-<html>  
-<head>  
-<title>仵文豪祝大家2021年元旦快乐</title>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Happy New Year's day to Qining LI</title>
 <style>
 body{
     margin:0;
@@ -9,7 +9,7 @@ body{
     background:url("image/2021.jpg") no-repeat;
     background-size: 100% 100%;
     opacity: 0.85;
-}    
+}
 div{
     padding:1px 5px;
     background:#333;
@@ -18,94 +18,132 @@ div{
     color:#555;
     font-family:arial;
 }
-</style>   
-</head>  
+section{
+    color: white;
+    text-align: center;
+}
+article h1{
+    margin: 0 auto;
+}
+article p {
+    font-size: 12px;
+    margin: 0 auto;
+}
+section button{
+    background: #000000;
+    display: block;
+    margin: 0 auto;
+    outline: 0;
+    color: white;
+}
+</style>
+</head>
 <body>
+    <section>
+        <button class="btn">点击隐藏文字</button>
+        <article class="art">
+            <h1>Happy New Year's day to Qining LI</h1>
+            <p>鼠标滑动或点击屏幕会出现好看的烟火效果哦</p>
+        </article>
+    </section>
     <div id="text">
-    </div>  
+    </div>
     <canvas id="fireworks">
-    </canvas>  
-</body>  
+    </canvas>
+</body>
 </html>
-<script type="text/javascript"> 
-    window.onload = function () {            
-        fireworks = document.getElementById("fireworks"); 
-        fws = fireworks.getContext("2d"); 
-        fwsWidth = fireworks.width = window.innerWidth; 
-        fwsHeight = fireworks.height = window.innerHeight; 
-        fws.fillRect(0, 0, fwsWidth, fwsHeight); 
-        fws.globalCompositeOperation = "lighter"; 
-        fws.lineWidth = 0.2; 
-        fws.lineCap = "round";       
+<script type="text/javascript">
+    window.onload = function () {
+        btn = document.querySelector('.btn')
+        art = document.querySelector('.art')
+        flag = true
+        btn.onclick = function (){
+            flag = !flag
+            if(flag){
+                this.innerHTML = '点击隐藏文字'
+                art.style.display = 'block'
+            }else{
+                this.innerHTML = '点击显示文字'
+                art.style.display = 'none'
+            }
+        }
+        fireworks = document.getElementById("fireworks");
+        fws = fireworks.getContext("2d");
+        fwsWidth = fireworks.width = window.innerWidth;
+        fwsHeight = fireworks.height = window.innerHeight;
+        fws.fillRect(0, 0, fwsWidth, fwsHeight);
+        fws.globalCompositeOperation = "lighter";
+        fws.lineWidth = 0.2;
+        fws.lineCap = "round";
         var bool = 0, radius = 0,angle = 0;
-        fireworks.onmousemove = function (event) {  
-            if (window.fwsTime) {  
-                if (fwsRandom == 9) { 
-                    fwsRandom = Math.random() * 15; 
-                    fwsCallback(1); 
-                }  
-                clearTimeout(fwsTime);  
-            }  
-            beforeX = event.pageX; 
-            beforeY = event.pageY;  
-            presentX = beforeX, 
+        fireworks.onmousemove = function (event) {
+            if (window.fwsTime) {
+                if (fwsRandom == 9) {
+                    fwsRandom = Math.random() * 15;
+                    fwsCallback(1);
+                }
+                clearTimeout(fwsTime);
+            }
+            beforeX = event.pageX;
+            beforeY = event.pageY;
+            presentX = beforeX,
             presentY = beforeY;
-            startX = 0; 
-            startY = 0; 
-            XW = (event.pageX / fwsWidth * 999 >> 0) / 999; 
-            YH = (event.pageY / fwsHeight * 999 >> 0) / 999; 
-            angle = event.pageX / fwsHeight * 360 >> 0; 
-            fwsRandom = 9; 
-            circle = 360 * Math.PI / 180; 
-            fwsTime = setInterval(fwsCallback = function (event) {  
-                fws.save(); 
-                fws.globalCompositeOperation = "source-over"; 
-                if (event != 1) { 
-                    fws.fillStyle = "rgba(0,0,0,0.02)"; 
-                    fws.fillRect(0, 0, fwsWidth, fwsHeight); 
-                }  
-                fws.restore(); 
-                ring = 25; 
-                while (ring--) {  
-                    fws.beginPath(); 
-                    if (fwsRandom > 450 || bool) {  
-                        if (!bool) { 
-                            bool = 1; 
-                        }  
-                        if (fwsRandom < 0.1) { 
-                            bool = 0; 
-                        }  
-                        radius -= circle; 
-                        fwsRandom -= 0.1;  
-                    }  
-                    if (!bool) { 
-                        radius += circle; 
-                        fwsRandom += 0.1; 
-                    }  
-                    q = (XW / YH - 1) * radius; 
-                    endX = (XW - YH) * Math.cos(radius) + fwsRandom * Math.cos(q) + (presentX + (beforeX - presentX) * (ring / 25)) + (YH - XW); 
-                    endY = (XW - YH) * Math.sin(radius) - fwsRandom * Math.sin(q) + (presentY + (beforeY - presentY) * (ring / 25)); 
-                    if (startX) { 
-                        fws.moveTo(startX, startY); 
-                        fws.lineTo(endX, endY) 
-                    }  
-                    fws.strokeStyle = "hsla(" + (angle % 360) + ",100%,50%,0.75)"; 
-                    fws.stroke(); 
-                    startX = endX; 
-                    startY = endY;  
-                }  
+            startX = 0;
+            startY = 0;
+            XW = (event.pageX / fwsWidth * 999 >> 0) / 999;
+            YH = (event.pageY / fwsHeight * 999 >> 0) / 999;
+            angle = event.pageX / fwsHeight * 360 >> 0;
+            fwsRandom = 9;
+            circle = 360 * Math.PI / 180;
+            fwsTime = setInterval(fwsCallback = function (event) {
+                fws.save();
+                fws.globalCompositeOperation = "source-over";
+                if (event != 1) {
+                    fws.fillStyle = "rgba(0,0,0,0.02)";
+                    fws.fillRect(0, 0, fwsWidth, fwsHeight);
+                }
+                fws.restore();
+                ring = 25;
+                while (ring--) {
+                    fws.beginPath();
+                    if (fwsRandom > 450 || bool) {
+                        if (!bool) {
+                            bool = 1;
+                        }
+                        if (fwsRandom < 0.1) {
+                            bool = 0;
+                        }
+                        radius -= circle;
+                        fwsRandom -= 0.1;
+                    }
+                    if (!bool) {
+                        radius += circle;
+                        fwsRandom += 0.1;
+                    }
+                    q = (XW / YH - 1) * radius;
+                    endX = (XW - YH) * Math.cos(radius) + fwsRandom * Math.cos(q) + (presentX + (beforeX - presentX) * (ring / 25)) + (YH - XW);
+                    endY = (XW - YH) * Math.sin(radius) - fwsRandom * Math.sin(q) + (presentY + (beforeY - presentY) * (ring / 25));
+                    if (startX) {
+                        fws.moveTo(startX, startY);
+                        fws.lineTo(endX, endY)
+                    }
+                    fws.strokeStyle = "hsla(" + (angle % 360) + ",100%,50%,0.75)";
+                    fws.stroke();
+                    startX = endX;
+                    startY = endY;
+                }
                 angle -= 0.5;
-                presentX = beforeX; 
-                presentY = beforeY;  
-            }, 16);  
-        }  
-        document.onkeydown = function (event) { 
-            startX = startY = 0; 
-            XW += 0.05 
-        }  
-        fireworks.onmousemove({ 
-            pageX: 300, 
-            pageY: 290 
-        })  
+                presentX = beforeX;
+                presentY = beforeY;
+            }, 16);
+        }
+        document.onkeydown = function (event) {
+            startX = startY = 0;
+            XW += 0.05
+        }
+        fireworks.onmousemove({
+            pageX: 300,
+            pageY: 290
+        })
     }
-</script>  
+</script>
