@@ -1,7 +1,7 @@
 <!DOCTYPE html>  
 <html>  
 <head>  
-<title>to 郭硕</title>
+<title>to 王琪靓</title>
 <meta charset="UTF-8">
 <style>
 body{
@@ -58,7 +58,7 @@ body{
 75%{transform:scale(1.2);}
 100%{transform:scale(1.1);}
 }
-.wwh,.gs{
+.wwh,.wql{
  color: red;
  margin: 0 auto;
  position: relative;
@@ -95,7 +95,7 @@ body{
         </p>
     </div>
     <div class="time"></div>
-    <h1 class="gs">郭硕</h1> 
+    <h1 class="wql">王琪靓</h1> 
     <canvas id="fireworks">
     </canvas> 
 </body>  
@@ -112,7 +112,7 @@ body{
         fireworks = document.getElementById("fireworks");
         myHeart = document.querySelector(".myHeart");
         wwh = document.querySelector(".wwh");
-        gs = document.querySelector(".gs");
+        wql = document.querySelector(".wql");
         time = document.querySelector(".time");  
         fws = fireworks.getContext("2d"); 
         fwsWidth = fireworks.width = window.innerWidth; 
@@ -191,12 +191,12 @@ body{
         var jump = 0;
         var timeUp = 121;
         var content = '';
-        var text = `我第一次见到你就喜欢你了,我感觉我挺幸运的,终于找到我爱的人了,我在心里告诉自己一定不要错过你,你就是我的幸福,和你在一起我很开心,就想着能天天能够见到你,我真是不能每天都没有你的消息,我每时每刻都在想你。`
+        var text = `我第一次见到你就喜欢你了,我感觉我挺幸运的,终于找到我爱的人了,我在心里告诉自己一定不要错过你,你就是我的幸福,和你在一起我很开心,我每时每刻都在想你,宝贝,520快乐,愿以后的每一天,我们能一起携手度过。`
         var split = text.split('').reverse()
         console.log(split);
         var timer = setInterval(()=>{
             timeUp--;
-            if(timeUp<113){
+            if(timeUp<112){
                 time.style.display = 'block'
                 if (timeUp>9) {
                     if(split[timeUp-10] === ','){
@@ -217,7 +217,7 @@ body{
                 time.style.display = 'none'
                 myHeart.style.display = 'block'
                 wwh.style.display = 'block'
-                gs.style.display = 'block'
+                wql.style.display = 'block'
                 clearInterval(timer)
             }
             num = Math.floor(Math.random()*(window.innerWidth))
