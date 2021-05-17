@@ -189,18 +189,18 @@ body{
         }
         var num = 0;
         var jump = 0;
-        var timeUp = 121;
+        var timeUp = 176;
         var content = '';
-        var text = `我第一次见到你就喜欢你了,我感觉我挺幸运的,终于找到我爱的人了,我在心里告诉自己一定不要错过你,你就是我的幸福,和你在一起我很开心,我每时每刻都在想你,宝贝,520快乐,愿以后的每一天,我们能一起携手度过。`
+        var text = `Dear 王琪靓,可能我第一次见到你的照片就默默喜欢你了,只是当时的我并没有察觉,后来知道别的男生向你表白我会吃醋,你的一言一行都牵挂着我的心,我更加确定终于找到我爱的人了,我在心里告诉自己一定不要错过你,你就是我的幸福,和你在一起我很开心,我每时每刻都在想你,宝贝,愿往后余生全都是你,爱你的仵文豪。`
         var split = text.split('').reverse()
         console.log(split);
         var timer = setInterval(()=>{
             timeUp--;
-            if(timeUp<112){
+            if(timeUp<161){
                 time.style.display = 'block'
                 if (timeUp>9) {
                     if(split[timeUp-10] === ','){
-                        split[timeUp-10] = ','+'<br>'
+                        split[timeUp-10] = '<br>'
                     }
                   content += split[timeUp-10]
                   console.log(content);
